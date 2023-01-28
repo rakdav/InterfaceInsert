@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace InterfaceInsert
 {
-    internal class SortByPassword : IComparer
+    internal class SortByRole:IComparer
     {
         public int Compare(object? x, object? y)
         {
             if (x is ClassUser && y is ClassUser)
             {
-                var user1=x as ClassUser;
-                var user2=y as ClassUser;
-                if (user1?.Password.CompareTo(user2?.Password) > 0)
+                var user1 = x as ClassUser;
+                var user2 = y as ClassUser;
+                if (user1?.UserRole.RoleName.CompareTo(user2?.UserRole.RoleName) > 0)
                     return 1;
-                else if (user1?.Password.CompareTo(user2?.Password) < 0)
+                else if (user1?.UserRole.RoleName.CompareTo(user2?.UserRole.RoleName)<0)
                     return -1;
-                 return 0;
+                return 0;
             }
             else throw new Exception("Невозможно сортировать");
         }

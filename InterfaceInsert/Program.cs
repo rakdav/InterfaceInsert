@@ -48,3 +48,15 @@ foreach (var item in mas)
 {
     Console.WriteLine(item);
 }
+Console.WriteLine();
+Array.Sort(mas, new SortByRole());
+foreach (var item in mas)
+{
+    Console.WriteLine(item);
+}
+Console.WriteLine();
+RoleEnum re=new RoleEnum();
+foreach(var item in re)
+{
+    Console.WriteLine(item.RoleName);
+}
